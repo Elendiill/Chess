@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2915086836505385242}
   - component: {fileID: 7796218060772975264}
-  - component: {fileID: 1180144913294589875}
   - component: {fileID: 2954600998785249163}
+  - component: {fileID: 6740537602469404650}
   m_Layer: 0
   m_Name: King
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5816953781875443094}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.37599993, y: 2.1838, z: 0.070340335}
+  m_LocalPosition: {x: 0.35047507, y: 2.2142475, z: 0.071571}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -86,18 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1180144913294589875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5816953781875443094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28b9d37143fbb3f4888e0138465796fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2954600998785249163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,4 +101,17 @@ MonoBehaviour:
   sprites:
   - {fileID: -604706085, guid: ee1589b79ddf71f4fb0ccfbe4c6e047b, type: 3}
   - {fileID: -2051073644, guid: ee1589b79ddf71f4fb0ccfbe4c6e047b, type: 3}
+  spriteRenderer: {fileID: 7796218060772975264}
   avaliableMoves: []
+--- !u!114 &6740537602469404650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5816953781875443094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebbba8cc645b54b4ebbb4762052bad2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -9,7 +9,7 @@ public abstract class Piece : MonoBehaviour
     //private MaterialSetter materialSetter;
     [SerializeField] protected Sprite[] sprites;
 
-    private SpriteRenderer spriteRenderer;
+    [SerializeField] protected SpriteRenderer spriteRenderer;
     public Board board {protected get; set; }
 
     public Vector2Int occupiedSquare {get; set; }
@@ -28,7 +28,6 @@ public abstract class Piece : MonoBehaviour
         avaliableMoves = new List<Vector2Int>();
         tweener = GetComponent<IObjectTweener>();
         hasMoved = false;
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public bool IsFromSameTeam(Piece piece)
@@ -43,7 +42,10 @@ public abstract class Piece : MonoBehaviour
 
     public virtual void MovePiece(Vector2Int coords)
     {
-
+        Vector3 targetPosition = board.CalculatePositionFromCoords(coords);
+        occupiedSquare = coords;
+        hasMoved = true;
+        tweener.MoveTo(transform, targetPosition);
     }
 
     protected void TryAddMove(Vector2Int coords)
@@ -57,13 +59,11 @@ public abstract class Piece : MonoBehaviour
         occupiedSquare = coords;
         this.board = board;
         transform.position = board.CalculatePositionFromCoords(coords);
-        
+
         if (team == TeamColor.Black)
-            spriteRenderer.sprite = sprites[1]; //white
-        
+            spriteRenderer.sprite = sprites[1]; //black
+
         else
-            spriteRenderer.sprite = sprites[0]; //black
-        
-            
+            spriteRenderer.sprite = sprites[0]; //white
     }
 }

@@ -4550,6 +4550,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1784026116}
   - component: {fileID: 1784026117}
+  - component: {fileID: 1784026119}
+  - component: {fileID: 1784026118}
+  - component: {fileID: 1784026120}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -4566,8 +4569,8 @@ Transform:
   m_GameObject: {fileID: 1784026115}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.73, y: 2.3, z: 0.070340335}
-  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_LocalPosition: {x: -0.74, y: 2.6, z: 0}
+  m_LocalScale: {x: 1.41, y: 1.41, z: 1.41}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 765880692}
@@ -4587,6 +4590,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bottomLeftSquareTransfrom: {fileID: 2126963594}
   squareSize: 0.5
+  scale: 1.41
+--- !u!114 &1784026118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784026115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 350dc72a8fdcf11449ec153a416490a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1784026119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784026115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd84e00798a9f68448a4b89c6c8032e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1784026120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784026115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b668005ffcb5edf4b88bb72e35c9065f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freeSquareMaterial: {fileID: 2100000, guid: 3eb56590661362f48a95cbd7431c73cf, type: 2}
+  opponentSquareMaterial: {fileID: 2100000, guid: 57c1a3f9d3dbbda48a8d89e91d408f88, type: 2}
+  selectorPrefab: {fileID: 4484127232801260221, guid: d160415862a0ea54fa0fa066b5f35f60, type: 3}
 --- !u!1001 &1785620334
 PrefabInstance:
   m_ObjectHideFlags: 0

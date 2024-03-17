@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7526850529355463328}
   - component: {fileID: 2510543566086790763}
-  - component: {fileID: 567436510488323151}
   - component: {fileID: 6113334096801098837}
+  - component: {fileID: 3330316316055680638}
   m_Layer: 0
   m_Name: Pawn
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4269081108346437237}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.476, y: 1.4837997, z: 0.070340335}
+  m_LocalPosition: {x: 2.4767253, y: 1.5054972, z: 0.071571}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -86,18 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &567436510488323151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4269081108346437237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28b9d37143fbb3f4888e0138465796fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6113334096801098837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,4 +101,17 @@ MonoBehaviour:
   sprites:
   - {fileID: -142216397, guid: ee1589b79ddf71f4fb0ccfbe4c6e047b, type: 3}
   - {fileID: -1831892694, guid: ee1589b79ddf71f4fb0ccfbe4c6e047b, type: 3}
+  spriteRenderer: {fileID: 2510543566086790763}
   avaliableMoves: []
+--- !u!114 &3330316316055680638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4269081108346437237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebbba8cc645b54b4ebbb4762052bad2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

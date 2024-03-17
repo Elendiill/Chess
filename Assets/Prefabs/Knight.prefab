@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6456940430599848519}
   - component: {fileID: 8911064182026142115}
-  - component: {fileID: -5839118562994582316}
   - component: {fileID: 5869836261089844193}
+  - component: {fileID: 4814491200001081776}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 3356623462727771793}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7759998, y: 2.1838, z: 0.070340335}
+  m_LocalPosition: {x: 1.7679751, y: 2.2142475, z: 0.071571}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -86,18 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-5839118562994582316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3356623462727771793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28b9d37143fbb3f4888e0138465796fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5869836261089844193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,4 +101,17 @@ MonoBehaviour:
   sprites:
   - {fileID: -1364720648, guid: ee1589b79ddf71f4fb0ccfbe4c6e047b, type: 3}
   - {fileID: 522641236, guid: ee1589b79ddf71f4fb0ccfbe4c6e047b, type: 3}
+  spriteRenderer: {fileID: 8911064182026142115}
   avaliableMoves: []
+--- !u!114 &4814491200001081776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3356623462727771793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebbba8cc645b54b4ebbb4762052bad2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
