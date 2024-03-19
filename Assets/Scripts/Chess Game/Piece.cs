@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -65,5 +66,15 @@ public abstract class Piece : MonoBehaviour
 
         else
             spriteRenderer.sprite = sprites[0]; //white
+    }
+
+    public bool IsAttackingPieceOfType<T>() where T : Piece
+    {
+        foreach (var square in avaliableMoves)
+        {
+            if (board.GetPieceOnSquare(square) is T)
+                return true;
+        }
+        return false;
     }
 }

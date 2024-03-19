@@ -53,6 +53,8 @@ public class Board : MonoBehaviour
 
     internal void onSquareSelected(Vector3 inputPosition)
     {
+        if (!chessGameController.IsGameInProgress())
+            return;
         
         Vector2Int coords = CalculatCoordsFromPosition(inputPosition);
         Piece piece = GetPieceOnSquare(coords);
@@ -61,38 +63,45 @@ public class Board : MonoBehaviour
         {
             
             if (piece != null && selectedPiece == piece)
-            {
                 DeselectPiece();
-            }
-                
+            
             else if (piece != null && selectedPiece != piece && chessGameController.IsTeamTurnActive(piece.team))
-            {
                 SelectPiece(piece);
-            }
-                
+            
             else if (selectedPiece.CanMoveTo(coords))
-            {
                 OnSelectedPieceMoved(coords, selectedPiece);
-            }
-                
         }
-
         else
         {
             if (piece != null && chessGameController.IsTeamTurnActive(piece.team))
-            {
                 SelectPiece(piece);
-            }
             
         }
     }
 
     private void OnSelectedPieceMoved(Vector2Int coords, Piece piece)
     {
+        TryToTakeOppositePiece(coords);
         UpdateBoardOnPieceMove(coords, piece.occupiedSquare, piece, null);
         selectedPiece.MovePiece(coords);
         DeselectPiece();
         EndTurn();
+    }
+
+    private void TryToTakeOppositePiece(Vector2Int coords)
+    {
+        Piece piece = GetPieceOnSquare(coords);
+        if (piece != null && !selectedPiece.IsFromSameTeam(piece))
+            TakePiece(piece);
+    }
+
+    private void TakePiece(Piece piece)
+    {
+        if (piece)
+        {
+            grid[piece.occupiedSquare.x, piece.occupiedSquare.y] = null;
+            chessGameController.OnPieceRemoved(piece);
+        }
     }
 
     private void EndTurn()
@@ -100,7 +109,7 @@ public class Board : MonoBehaviour
         chessGameController.EndTurn();
     }
 
-    private void UpdateBoardOnPieceMove(Vector2Int newCoords, Vector2Int oldCoords, Piece newPiece, Piece oldPiece)
+    public void UpdateBoardOnPieceMove(Vector2Int newCoords, Vector2Int oldCoords, Piece newPiece, Piece oldPiece)
     {
         grid[oldCoords.x, oldCoords.y] = oldPiece;
         grid[newCoords.x, newCoords.y] = newPiece;
@@ -108,6 +117,7 @@ public class Board : MonoBehaviour
 
     private void SelectPiece(Piece piece)
     {
+        chessGameController.RemoveMovesEnablingAttackOnPiecesOfType<King>(piece);
         selectedPiece = piece;
         List<Vector2Int> selection = selectedPiece.avaliableMoves;
         ShowSelectionSquares(selection);
